@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bnb89 - 社区影像 | 官方视频内容平台</title>
+<meta name="description" content="bnb89 官方网站，专注社区真实影像与创作者内容的视频品牌平台，提供高清原创内容、创作者生态与企业级品质服务。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231f6f5c'/%3E%3Cpath d='M24 18l22 14-22 14z' fill='%23f2e8d5'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bnb-ink:#12211d;
+  --bnb-deep:#1f6f5c;
+  --bnb-deep-2:#185648;
+  --bnb-leaf:#4c9a7f;
+  --bnb-sand:#f2e8d5;
+  --bnb-sand-2:#e6d8bd;
+  --bnb-clay:#c4734a;
+  --bnb-mist:#f7f5ef;
+  --bnb-line:#d9d2c2;
+  --bnb-shadow:0 14px 34px rgba(18,33,29,.10);
+  --bnb-radius:16px;
+  --bnb-max:1180px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  color:var(--bnb-ink);
+  background:var(--bnb-mist);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+h1,h2,h3,h4{margin:0;line-height:1.3;font-weight:700;}
+p{margin:0 0 1em;}
+.bnb-wrap{max-width:var(--bnb-max);margin:0 auto;padding:0 22px;}
+.bnb-sticky-shell{position:sticky;top:0;z-index:60;}
+/* 公告条 */
+.bnb-notice{
+  background:linear-gradient(90deg,var(--bnb-deep) 0%,#2f8a72 100%);
+  color:#f4fbf7;
+  font-size:13.5px;
+  letter-spacing:.02em;
+}
+.bnb-notice-inner{
+  max-width:var(--bnb-max);margin:0 auto;padding:9px 22px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.bnb-notice-dot{width:8px;height:8px;border-radius:50%;background:#ffd98a;box-shadow:0 0 0 4px rgba(255,217,138,.22);flex:none;}
+.bnb-notice strong{font-weight:600;}
+.bnb-notice a{text-decoration:underline;text-underline-offset:3px;opacity:.95;}
+/* 页头 */
+.bnb-header{background:rgba(247,245,239,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--bnb-line);}
+.bnb-header-inner{
+  max-width:var(--bnb-max);margin:0 auto;padding:12px 22px;
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+}
+.bnb-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.01em;}
+.bnb-logo-mark{
+  width:38px;height:38px;border-radius:12px;flex:none;
+  background:linear-gradient(135deg,var(--bnb-deep),#3e9a7e);
+  display:grid;place-items:center;box-shadow:0 6px 16px rgba(31,111,92,.35);
+}
+.bnb-logo-mark svg{width:20px;height:20px;}
+.bnb-logo small{display:block;font-size:10.5px;font-weight:500;letter-spacing:.18em;color:#6d7b74;}
+.bnb-nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:6px;}
+.bnb-nav a{
+  padding:7px 12px;border-radius:9px;font-size:14.5px;color:#2c3d36;
+  transition:background .2s,color .2s;
+}
+.bnb-nav a:hover{background:rgba(76,154,127,.14);color:var(--bnb-deep);}
+.bnb-head-tools{margin-left:auto;display:flex;align-items:center;gap:10px;}
+.bnb-search{
+  display:flex;align-items:center;gap:6px;
+  background:#fff;border:1px solid var(--bnb-line);border-radius:11px;padding:5px 8px 5px 12px;
+  transition:border-color .2s, box-shadow .2s;
+}
+.bnb-search:focus-within{border-color:var(--bnb-leaf);box-shadow:0 0 0 3px rgba(76,154,127,.18);}
+.bnb-search input{border:0;outline:0;font-size:14px;width:150px;background:transparent;color:var(--bnb-ink);}
+.bnb-search button{
+  border:0;background:var(--bnb-deep);color:#fff;border-radius:8px;padding:6px 11px;font-size:13px;
+}
+.bnb-search button:hover{background:var(--bnb-deep-2);}
+.bnb-burger{
+  display:none;border:1px solid var(--bnb-line);background:#fff;border-radius:10px;
+  width:42px;height:40px;align-items:center;justify-content:center;flex-direction:column;gap:4px;
+}
+.bnb-burger span{display:block;width:18px;height:2px;background:var(--bnb-ink);border-radius:2px;}
+.bnb-search-tip{
+  max-width:var(--bnb-max);margin:0 auto;padding:0 22px 8px;font-size:12.5px;color:var(--bnb-deep);
+  display:none;
+}
+.bnb-search-tip.is-on{display:block;}
+/* 首屏 */
+.bnb-hero{padding:52px 0 40px;position:relative;overflow:hidden;}
+.bnb-hero::before{
+  content:"";position:absolute;inset:auto -120px -180px auto;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,rgba(76,154,127,.20),transparent 70%);
+  pointer-events:none;
+}
+.bnb-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center;}
+.bnb-hero-badge{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.1em;
+  background:rgba(31,111,92,.10);color:var(--bnb-deep);border:1px solid rgba(31,111,92,.22);
+  padding:5px 12px;border-radius:999px;margin-bottom:16px;
+}
+.bnb-hero h1{font-size:clamp(38px,5.4vw,62px);letter-spacing:.01em;color:var(--bnb-ink);}
+.bnb-hero h1 em{font-style:normal;color:var(--bnb-deep);}
+.bnb-hero-slogan{margin-top:14px;font-size:19px;font-weight:600;color:#3c524a;}
+.bnb-hero-lead{margin-top:14px;color:#4b5c55;font-size:15.5px;max-width:36em;}
+.bnb-hero-lead strong{color:var(--bnb-deep);font-weight:600;}
+.bnb-stats{display:flex;gap:26px;flex-wrap:wrap;margin:24px 0 26px;}
+.bnb-stats div{min-width:96px;}
+.bnb-stats b{display:block;font-size:26px;color:var(--bnb-deep);letter-spacing:.01em;}
+.bnb-stats span{font-size:12.5px;color:#6b7a73;letter-spacing:.03em;}
+.bnb-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.bnb-btn{
+  display:inline-flex;align-items:center;gap:8px;border-radius:11px;padding:11px 20px;font-size:14.5px;
+  border:1px solid transparent;font-weight:600;transition:transform .18s,background .2s,box-shadow .2s;
+}
+.bnb-btn:hover{transform:translateY(-2px);}
+.bnb-btn-primary{background:var(--bnb-deep);color:#fff;box-shadow:0 10px 22px rgba(31,111,92,.28);}
+.bnb-btn-primary:hover{background:var(--bnb-deep-2);}
+.bnb-btn-ghost{background:#fff;border-color:var(--bnb-line);color:var(--bnb-ink);}
+.bnb-btn-ghost:hover{border-color:var(--bnb-leaf);color:var(--bnb-deep);}
+.bnb-hero-art{position:relative;}
+.bnb-hero-art .bnb-hero-frame{
+  border-radius:22px;overflow:hidden;box-shadow:var(--bnb-shadow);border:1px solid rgba(31,111,92,.16);
+  background:#fff;
+}
+.bnb-hero-art figcaption{margin-top:10px;font-size:12.5px;color:#77857e;text-align:right;}
+.bnb-hero-tag{
+  position:absolute;left:-14px;bottom:26px;background:#fff;border:1px solid var(--bnb-line);
+  border-radius:14px;padding:10px 14px;box-shadow:var(--bnb-shadow);font-size:13px;color:#3c524a;
+}
+.bnb-hero-tag b{color:var(--bnb-deep);}
+/* 通用 section */
+.bnb-section{padding:52px 0;}
+.bnb-section--tint{background:linear-gradient(180deg,#f0efe6 0%,var(--bnb-mist) 100%);}
+.bnb-section-head{max-width:760px;margin-bottom:30px;}
+.bnb-eyebrow{
+  font-size:12.5px;letter-spacing:.18em;color:var(--bnb-clay);font-weight:700;text-transform:uppercase;
+  display:flex;align-items:center;gap:9px;margin-bottom:10px;
+}
+.bnb-eyebrow::before{content:"";width:22px;height:2px;background:var(--bnb-clay);display:inline-block;}
+.bnb-section-head h2{font-size:clamp(25px,3vw,32px);color:var(--bnb-ink);}
+.bnb-section-head p{color:#5a6a63;margin-top:10px;font-size:15px;}
+/* 焦点区 */
+.bnb-focus-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:26px;align-items:start;}
+.bnb-focus-main{
+  background:#fff;border-radius:var(--bnb-radius);overflow:hidden;border:1px solid var(--bnb-line);
+  box-shadow:var(--bnb-shadow);
+}
+.bnb-focus-main img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+.bnb-focus-body{padding:22px 24px 24px;}
+.bnb-focus-body h3{font-size:22px;margin-bottom:8px;}
+.bnb-focus-body p{color:#4f6059;font-size:14.5px;}
+.bnb-meta{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:12.5px;color:#71807a;margin:10px 0;}
+.bnb-chip{
+  display:inline-block;background:rgba(76,154,127,.13);color:var(--bnb-deep);
+  border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600;
+}
+.bnb-chip--clay{background:rgba(196,115,74,.14);color:#a85c33;}
+.bnb-focus-side{display:grid;gap:14px;}
+.bnb-focus-item{
+  background:#fff;border:1px solid var(--bnb-line);border-radius:13px;padding:16px 18px;
+  display:flex;gap:14px;align-items:flex-start;transition:border-color .2s,transform .2s,box-shadow .2s;
+}
+.bnb-focus-item:hover{border-color:var(--bnb-leaf);transform:translateY(-2px);box-shadow:var(--bnb-shadow);}
+.bnb-focus-num{
+  font-size:22px;font-weight:800;color:var(--bnb-sand-2);flex:none;width:34px;line-height:1;
+  -webkit-text-stroke:1px var(--bnb-clay);
+}
+.bnb-focus-item h3{font-size:15.5px;margin-bottom:4px;}
+.bnb-focus-item p{font-size:13px;color:#6a7972;margin:0;}
+/* 视频条目 */
+.bnb-video-list{display:grid;gap:16px;}
+.bnb-video-card{
+  background:#fff;border:1px solid var(--bnb-line);border-radius:var(--bnb-radius);padding:20px 22px;
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px 22px;align-items:start;
+  transition:border-color .2s,box-shadow .2s,transform .2s;
+}
+.bnb-video-card:hover{border-color:var(--bnb-leaf);box-shadow:var(--bnb-shadow);transform:translateY(-2px);}
+.bnb-video-card h3{font-size:18px;margin-bottom:6px;}
+.bnb-video-card h3 a:hover{color:var(--bnb-deep);}
+.bnb-video-card p{font-size:14px;color:#586962;margin:0 0 8px;}
+.bnb-video-ops{display:flex;flex-direction:column;gap:8px;min-width:120px;}
+.bnb-op{
+  border:1px solid var(--bnb-line);background:#fff;border-radius:9px;padding:6px 10px;font-size:12.5px;
+  color:#4b5c55;display:inline-flex;align-items:center;gap:6px;justify-content:center;transition:all .18s;
+}
+.bnb-op:hover{border-color:var(--bnb-leaf);color:var(--bnb-deep);}
+.bnb-op.is-liked{background:rgba(31,111,92,.10);border-color:var(--bnb-deep);color:var(--bnb-deep);font-weight:600;}
+.bnb-op.is-saved{background:rgba(196,115,74,.12);border-color:var(--bnb-clay);color:#a85c33;font-weight:600;}
+.bnb-video-wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:20px;align-items:start;}
+.bnb-video-wide img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;}
+.bnb-video-wide .bnb-video-text h3{font-size:19px;}
+/* 专题 */
+.bnb-topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:18px;}
+.bnb-topic{
+  background:#fff;border:1px solid var(--bnb-line);border-radius:var(--bnb-radius);padding:22px;
+  display:flex;flex-direction:column;gap:10px;
+}
+.bnb-topic-status{
+  align-self:flex-start;font-size:12px;font-weight:600;border-radius:999px;padding:3px 11px;
+  background:rgba(31,111,92,.12);color:var(--bnb-deep);
+}
+.bnb-topic-status--warm{background:rgba(196,115,74,.14);color:#a85c33;}
+.bnb-topic h3{font-size:18px;}
+.bnb-topic p{font-size:13.5px;color:#5a6a63;margin:0;}
+.bnb-topic ul{margin:2px 0 0;padding-left:0;list-style:none;display:grid;gap:6px;}
+.bnb-topic li{font-size:13px;color:#4b5c55;padding-left:16px;position:relative;}
+.bnb-topic li::before{content:"›";position:absolute;left:2px;color:var(--bnb-leaf);font-weight:700;}
+/* 关键词解析 */
+.bnb-analysis{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;align-items:start;}
+.bnb-analysis h3{font-size:18.5px;margin:18px 0 8px;color:var(--bnb-deep-2);}
+.bnb-analysis p{font-size:14.5px;color:#4b5c55;}
+.bnb-analysis-side{
+  background:#fff;border:1px solid var(--bnb-line);border-radius:var(--bnb-radius);padding:24px;
+  box-shadow:var(--bnb-shadow);position:sticky;top:150px;
+}
+.bnb-analysis-side h3{font-size:17px;margin-bottom:12px;}
+.bnb-bar{display:grid;gap:14px;}
+.bnb-bar-item span{font-size:13px;color:#4b5c55;display:flex;justify-content:space-between;}
+.bnb-bar-track{height:8px;border-radius:999px;background:var(--bnb-sand-2);margin-top:6px;overflow:hidden;}
+.bnb-bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--bnb-deep),var(--bnb-leaf));}
+/* 作者区 */
+.bnb-authors{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
+.bnb-author{
+  background:#fff;border:1px solid var(--bnb-line);border-radius:var(--bnb-radius);padding:20px;
+  display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s,transform .2s,border-color .2s;
+}
+.bnb-author:hover{box-shadow:var(--bnb-shadow);transform:translateY(-2px);border-color:var(--bnb-leaf);}
+.bnb-author-top{display:flex;align-items:center;gap:12px;}
+.bnb-avatar{
+  width:52px;height:52px;border-radius:50%;flex:none;display:grid;place-items:center;
+  font-weight:800;font-size:20px;color:#fff;letter-spacing:.02em;
+}
+.bnb-avatar--a{background:linear-gradient(135deg,#1f6f5c,#4c9a7f);}
+.bnb-avatar--b{background:linear-gradient(135deg,#c4734a,#e0a077);}
+.bnb-avatar--c{background:linear-gradient(135deg,#3f5f7a,#6d93b3);}
+.bnb-avatar--d{background:linear-gradient(135deg,#6b5d8c,#9a8cbc);}
+.bnb-avatar--e{background:linear-gradient(135deg,#8a6a3f,#bfa06a);}
+.bnb-author h3{font-size:16.5px;}
+.bnb-author .bnb-role{font-size:12.5px;color:#6a7972;}
+.bnb-author p{font-size:13.5px;color:#566660;margin:0;}
+.bnb-author-figures{display:flex;gap:16px;font-size:12.5px;color:#6a7972;}
+.bnb-author-figures b{color:var(--bnb-deep);font-size:14px;}
+.bnb-author button{align-self:flex-start;}
+/* 评价 */
+.bnb-reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:16px;}
+.bnb-review{
+  background:#fff;border:1px solid var(--bnb-line);border-radius:13px;padding:18px 20px;
+}
+.bnb-review-head{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.bnb-review-dot{width:30px;height:30px;border-radius:50%;background:var(--bnb-sand);display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--bnb-deep);}
+.bnb-review-head strong{font-size:14px;}
+.bnb-review-head span{font-size:12px;color:#849089;margin-left:auto;}
+.bnb-review p{font-size:13.5px;color:#4f6059;margin:0;}
+.bnb-stars{color:#e0a24a;font-size:13px;letter-spacing:.1em;}
+/* 动态 */
+.bnb-news{display:grid;gap:12px;}
+.bnb-news-item{
+  display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;background:#fff;border:1px solid var(--bnb-line);
+  border-radius:12px;padding:14px 18px;align-items:baseline;
+}
+.bnb-news-item time{font-size:12.5px;color:var(--bnb-clay);font-weight:600;}
+.bnb-news-item h3{font-size:15px;margin-bottom:3px;}
+.bnb-news-item p{font-size:13px;color:#6a7972;margin:0;}
+/* FAQ */
+.bnb-faq{display:grid;gap:10px;}
+.bnb-faq details{
+  background:#fff;border:1px solid var(--bnb-line);border-radius:12px;padding:2px 18px;
+  transition:border-color .2s;
+}
+.bnb-faq details[open]{border-color:var(--bnb-leaf);}
+.bnb-faq summary{
+  cursor:pointer;padding:14px 0;font-size:15px;font-weight:600;list-style:none;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.bnb-faq summary::-webkit-details-marker{display:none;}
+.bnb-faq summary::after{content:"+";font-size:19px;color:var(--bnb-deep);transition:transform .2s;font-weight:400;}
+.bnb-faq details[open] summary::after{content:"–";}
+.bnb-faq p{font-size:13.5px;color:#566660;padding-bottom:14px;margin:0;}
+/* 合作 */
+.bnb-partners{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;}
+.bnb-partner{
+  background:#fff;border:1px dashed var(--bnb-sand-2);border-radius:12px;padding:20px 14px;text-align:center;
+  font-size:14px;font-weight:600;color:#3c524a;letter-spacing:.02em;
+}
+.bnb-partner span{display:block;font-size:11.5px;font-weight:500;color:#849089;letter-spacing:.08em;margin-top:3px;}
+/* 投稿邀请 */
+.bnb-cta{
+  background:linear-gradient(120deg,var(--bnb-deep) 0%,#2f8a72 60%,#4c9a7f 100%);
+  border-radius:22px;padding:40px;color:#f4fbf7;display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:24px;align-items:center;box-shadow:0 20px 44px rgba(31,111,92,.28);
+}
+.bnb-cta h2{font-size:clamp(23px,2.6vw,30px);color:#fff;}
+.bnb-cta p{margin:10px 0 0;font-size:14.5px;color:rgba(244,251,247,.86);max-width:44em;}
+.bnb-cta .bnb-btn-ghost{background:#fff;border-color:#fff;color:var(--bnb-deep);}
+/* 页脚 */
+.bnb-footer{background:#12211d;color:#c8d3cd;padding:48px 0 26px;margin-top:10px;}
+.bnb-footer-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:30px;}
+.bnb-footer h3{font-size:14px;color:#fff;margin-bottom:12px;letter-spacing:.04em;}
+.bnb-footer p{font-size:13px;color:#94a59d;line-height:1.8;}
+.bnb-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:13px;}
+.bnb-footer ul a:hover{color:#fff;}
+.bnb-footer-bottom{
+  max-width:var(--bnb-max);margin:32px auto 0;padding:18px 22px 0;border-top:1px solid rgba(255,255,255,.12);
+  font-size:12.5px;color:#7d8f87;display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between;
+}
+/* 弹窗与提示 */
+.bnb-modal{
+  position:fixed;inset:0;background:rgba(18,33,29,.55);display:none;place-items:center;z-index:120;padding:20px;
+}
+.bnb-modal.is-on{display:grid;}
+.bnb-modal-box{
+  background:#fff;border-radius:18px;padding:26px;max-width:480px;width:100%;box-shadow:0 30px 70px rgba(0,0,0,.3);
+  position:relative;
+}
+.bnb-modal-box h3{font-size:19px;margin-bottom:10px;}
+.bnb-modal-box p{font-size:14px;color:#4f6059;}
+.bnb-modal-close{
+  position:absolute;top:14px;right:14px;border:0;background:var(--bnb-sand);width:30px;height:30px;border-radius:50%;
+  font-size:16px;color:#4b5c55;
+}
+.bnb-modal-close:hover{background:var(--bnb-sand-2);}
+.bnb-textarea{
+  width:100%;min-height:96px;border:1px solid var(--bnb-line);border-radius:10px;padding:10px 12px;
+  font-family:inherit;font-size:14px;resize:vertical;outline:0;
+}
+.bnb-textarea:focus{border-color:var(--bnb-leaf);box-shadow:0 0 0 3px rgba(76,154,127,.18);}
+.bnb-toast{
+  position:fixed;left:50%;bottom:32px;transform:translate(-50%,20px);background:var(--bnb-ink);color:#fff;
+  padding:11px 20px;border-radius:11px;font-size:13.5px;opacity:0;pointer-events:none;transition:all .25s;z-index:200;
+  box-shadow:0 14px 30px rgba(0,0,0,.28);
+}
+.bnb-toast.is-on{opacity:1;transform:translate(-50%,0);}
+.bnb-top{
+  position:fixed;right:22px;bottom:24px;width:46px;height:46px;border-radius:50%;border:0;
+  background:var(--bnb-deep);color:#fff;font-size:18px;display:none;place-items:center;z-index:90;
+  box-shadow:0 12px 26px rgba(31,111,92,.4);transition:background .2s;
+}
+.bnb-top:hover{background:var(--bnb-deep-2);}
+.bnb-top.is-on{display:grid;}
+/* 评论扩展 */
+.bnb-comment-list{display:grid;gap:10px;margin-top:12px;}
+.bnb-comment-list div{
+  background:var(--bnb-mist);border:1px solid var(--bnb-line);border-radius:9px;padding:9px 12px;font-size:13px;color:#4f6059;
+}
+/* 响应式 */
+@media (max-width:960px){
+  .bnb-hero-grid,.bnb-focus-grid,.bnb-analysis,.bnb-cta,.bnb-footer-grid{grid-template-columns:minmax(0,1fr);}
+  .bnb-analysis-side{position:static;}
+  .bnb-video-wide{grid-template-columns:minmax(0,1fr);}
+  .bnb-footer-grid{gap:22px;}
+}
+@media (max-width:820px){
+  .bnb-nav{display:none;width:100%;order:5;flex-direction:column;gap:2px;padding-top:6px;}
+  .bnb-nav.is-open{display:flex;}
+  .bnb-burger{display:flex;}
+  .bnb-head-tools{margin-left:auto;}
+  .bnb-search input{width:110px;}
+  .bnb-cta{padding:28px;}
+}
+@media (max-width:560px){
+  .bnb-video-card{grid-template-columns:minmax(0,1fr);}
+  .bnb-video-ops{flex-direction:row;flex-wrap:wrap;}
+  .bnb-news-item{grid-template-columns:minmax(0,1fr);gap:4px;}
+  .bnb-stats{gap:18px;}
+  .bnb-hero-tag{left:8px;bottom:12px;}
+  .bnb-search input{width:88px;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="bnb-sticky-shell">
+  <div class="bnb-notice">
+    <div class="bnb-notice-inner">
+      <span class="bnb-notice-dot" aria-hidden="true"></span>
+      <span><strong>官方发布：</strong>「社区微光计划」第二季 12 支短片已上线，开放全站报名与作品上传通道。</span>
+      <a href="#bnb-news">查看企业动态</a>
+    </div>
+  </div>
+  <header class="bnb-header">
+    <div class="bnb-header-inner">
+      <a class="bnb-logo" href="#bnb-hero" aria-label="bnb89 官方网站首页">
+        <span class="bnb-logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M8 5l11 7-11 7z" fill="#f2e8d5"/></svg>
+        </span>
+        <span>bnb89<small>社区影像官网</small></span>
+      </a>
+      <nav class="bnb-nav" id="bnbNav" aria-label="主导航">
+        <a href="#bnb-focus">精品内容</a>
+        <a href="#bnb-topics">专题企划</a>
+        <a href="#bnb-analysis">品牌解析</a>
+        <a href="#bnb-authors">创作者</a>
+        <a href="#bnb-reviews">用户口碑</a>
+        <a href="#bnb-faq">常见问题</a>
+      </nav>
+      <div class="bnb-head-tools">
+        <div class="bnb-search">
+          <label for="bnbSearchInput" class="bnb-visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">搜索内容</label>
+          <input type="search" id="bnbSearchInput" placeholder="搜索视频 / 作者 / 专题" autocomplete="off">
+          <button type="button" id="bnbSearchBtn">搜索</button>
+        </div>
+        <button class="bnb-burger" id="bnbBurger" type="button" aria-label="展开导航" aria-expanded="false" aria-controls="bnbNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="bnb-search-tip" id="bnbSearchTip" role="status" aria-live="polite"></div>
+  </header>
+</div>
+
+<main>
+  <!-- 首屏 -->
+  <section class="bnb-hero" id="bnb-hero">
+    <div class="bnb-wrap">
+      <div class="bnb-hero-grid">
+        <div>
+          <span class="bnb-hero-badge">官方网站 · 企业级视频品牌</span>
+          <h1>bnb89</h1>
+          <p class="bnb-hero-slogan">把社区里的真实生活，拍成值得反复观看的影像。</p>
+          <p class="bnb-hero-lead"><strong>bnb89</strong> 是一个以社区真实影像为核心的视频内容平台，我们与一线创作者、本地机构和企业伙伴共同搭建高品质内容生态。作为持续运营的品牌官方网站，我们坚持原创、正版与高清标准，用专业制作流程记录普通人的日常、经验与闪光时刻，让每一份真实都被看见、被留存、被传递。</p>
+          <div class="bnb-stats">
+            <div><b>1,260+</b><span>原创高清视频</span></div>
+            <div><b>320 位</b><span>签约创作者</span></div>
+            <div><b>2.8 亿</b><span>累计内容播放</span></div>
+          </div>
+          <div class="bnb-hero-actions">
+            <a class="bnb-btn bnb-btn-primary" href="#bnb-focus">浏览精品内容</a>
+            <button class="bnb-btn bnb-btn-ghost" type="button" data-bnb-open="submit">投稿与报名</button>
+            <a class="bnb-btn bnb-btn-ghost" href="#bnb-authors">认识创作者</a>
+          </div>
+        </div>
+        <figure class="bnb-hero-art" style="margin:0;">
+          <div class="bnb-hero-frame">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23234d43'/%3E%3Cstop offset='1' stop-color='%23559d84'/%3E%3C/linearGradient%3E%3ClinearGradient id='ground' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23c4734a'/%3E%3Cstop offset='1' stop-color='%23e0a077'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='500' fill='url(%23sky)'/%3E%3Ccircle cx='610' cy='130' r='74' fill='%23f2e8d5' opacity='0.9'/%3E%3Cpath d='M0 330 L150 230 L300 320 L430 220 L560 310 L700 240 L800 320 L800 500 L0 500 Z' fill='%23185a4a' opacity='0.8'/%3E%3Cpath d='M0 390 L170 320 L330 400 L520 330 L660 400 L800 350 L800 500 L0 500 Z' fill='url(%23ground)'/%3E%3Cg stroke='%23f2e8d5' stroke-width='7' fill='none' stroke-linecap='round'%3E%3Cpath d='M400 300 L400 380'/%3E%3Cpath d='M400 300 L360 350'/%3E%3Cpath d='M400 300 L442 348'/%3E%3C/g%3E%3Ccircle cx='400' cy='300' r='15' fill='%23f2e8d5'/%3E%3Crect x='60' y='60' width='150' height='34' rx='17' fill='%23f2e8d5' opacity='0.18'/%3E%3Ctext x='80' y='83' font-family='sans-serif' font-size='16' fill='%23f2e8d5'%3EREC · 社区记录%3C/text%3E%3C/svg%3E" alt="bnb89 官网首屏主视觉：社区记录者站在山脊上拍摄黄昏景象" width="800" height="500">
+          </div>
+          <figcaption>社区影像 · 第 2 季《微光计划》主视觉</figcaption>
+          <div class="bnb-hero-tag">本周新增 <b>18</b> 支高清原创短片</div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点内容 -->
+  <section class="bnb-section" id="bnb-focus">
+    <div class="bnb-wrap">
+      <div class="bnb-section-head">
+        <div class="bnb-eyebrow">精品内容</div>
+        <h2>bnb89 焦点：本周最值得打开的五支视频</h2>
+        <p>由内容编辑团队与社区创作者共同推选，覆盖日常记录、在地文化、实用技巧与创作幕后，全部为平台正版高清内容。</p>
+      </div>
+      <div class="bnb-focus-grid">
+        <article class="bnb-focus-main">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%231f6f5c'/%3E%3Crect x='0' y='270' width='800' height='180' fill='%23185a4a'/%3E%3Cg fill='%23f2e8d5'%3E%3Crect x='90' y='160' width='120' height='150' rx='6'/%3E%3Crect x='240' y='120' width='150' height='190' rx='6'/%3E%3Crect x='420' y='180' width='110' height='130' rx='6'/%3E%3Crect x='560' y='140' width='170' height='170' rx='6'/%3E%3C/g%3E%3Cg fill='%231f6f5c'%3E%3Crect x='110' y='185' width='26' height='26'/%3E%3Crect x='152' y='185' width='26' height='26'/%3E%3Crect x='110' y='230' width='26' height='26'/%3E%3Crect x='266' y='150' width='30' height='30'/%3E%3Crect x='312' y='150' width='30' height='30'/%3E%3Crect x='266' y='200' width='30' height='30'/%3E%3Crect x='442' y='210' width='24' height='24'/%3E%3Crect x='588' y='170' width='34' height='34'/%3E%3Crect x='646' y='170' width='34' height='34'/%3E%3C/g%3E%3Ccircle cx='690' cy='80' r='42' fill='%23e0a077'/%3E%3Ctext x='60' y='70' font-family='sans-serif' font-size='19' fill='%23f2e8d5'%3E老街一天 · 巷子里的营生%3C/text%3E%3C/svg%3E" alt="焦点视频封面：老街一天系列里的沿街店铺与手艺人" width="800" height="450">
+          <div class="bnb-focus-body">
+            <span class="bnb-chip">在地文化</span>
+            <h3>《老街一天》：用 12 小时记录一条街的呼吸</h3>
+            <p>清晨五点的早点摊、午后的修表铺、傍晚收摊时的家常话——导演组跟随三位老街店主完成一次不间断跟拍。全片采用自然光与同期声，保留环境噪音，尝试回答一个问题：一条街的记忆究竟由谁保管。</p>
+            <div class="bnb-meta">
+              <span>作者：林砚</span><span>时长 26:14</span><span>播放 42.6 万</span><span>收藏 8,930</span>
+            </div>
+            <div class="bnb-hero-actions">
+              <button class="bnb-btn bnb-btn-ghost" type="button" data-bnb-comment="老街一天">展开评论</button>
+              <button class="bnb-btn bnb-btn-ghost" type="button" data-bnb-copy="老街一天">复制链接</button>
+            </div>
+          </div>
+        </article>
+        <div class="bnb-focus-side">
+          <article class="bnb-focus-item">
+            <div class="bnb-focus-num">01</div>
+            <div>
+              <h3>三分钟学会窗台种菜：从配土到第一次采收</h3>
+              <p>作者：周慢 | 实用技巧 | 播放 18.3 万</p>
+            </div>
+          </article>
+          <article class="bnb-focus-item">
+            <div class="bnb-focus-num">02</div>
+            <div>
+              <h3>镜头背后的 11 小时：一支社区短片如何拍成</h3>
+              <p>作者：陈野 | 创作幕后 | 播放 15.7 万</p>
+            </div>
+          </article>
+          <article class="bnb-focus-item">
+            <div class="bnb-focus-num">03</div>
+            <div>
+              <h3>城市夜班车：凌晨两点的乘客与他们的故事</h3>
+              <p>作者：江城子 | 城市探索 | 播放 27.1 万</p>
+            </div>
+          </article>
+          <article class="bnb-focus-item">
+            <div class="bnb-focus-num">04</div>
+            <div>
+              <h3>一人食的四季：把日子过成不将就的样子</h3>
+              <p>作者：苏禾 | 生活方式 | 播放 21.5 万</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="bnb-section-head" style="margin-top:44px;">
+        <h2>热门视频流</h2>
+        <p>平台持续运营的热门内容，来自社区创作者上传与官方精品策划，支持点赞、收藏与评论互动。</p>
+      </div>
+      <div class="bnb-video-list">
+        <div class="bnb-video-card">
+          <div class="bnb-video-wide">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23e6d8bd'/%3E%3Ccircle cx='480' cy='90' r='54' fill='%23c4734a' opacity='0.85'/%3E%3Cpath d='M0 250 Q160 190 320 250 T640 240 L640 360 L0 360 Z' fill='%234c9a7f'/%3E%3Cpath d='M0 300 Q180 240 340 300 T640 290 L640 360 L0 360 Z' fill='%231f6f5c'/%3E%3Cg stroke='%2312211d' stroke-width='5' fill='none'%3E%3Ccircle cx='220' cy='170' r='16'/%3E%3Cpath d='M220 186 L220 240'/%3E%3Cpath d='M220 205 L188 225'/%3E%3Cpath d='M220 205 L252 222'/%3E%3C/g%3E%3Ctext x='28' y='46' font-family='sans-serif' font-size='17' fill='%2312211d'%3E田野徒步 · 四季观察%3C/text%3E%3C/svg%3E" alt="热门视频封面：田野徒步者在草地边缘记录四季变化" width="640" height="360">
+            <div class="bnb-video-text">
+              <span class="bnb-chip">户外活动</span>
+              <h3>把周末交给一条河：从源头走到入城口</h3>
+              <p>作者「江城子」用三天时间沿河徒步 34 公里，记录河道两侧的植被、桥洞与人的活动。片中有完整的路线攻略、补水点标注与拍摄机位建议，适合想尝试城市轻徒步的观众。</p>
+              <div class="bnb-meta"><span>时长 19:42</span><span>播放 26.8 万</span><span>点赞 12,430</span><span>收藏 6,120</span></div>
+            </div>
+          </div>
+          <div class="bnb-video-ops">
+            <button class="bnb-op" type="button" data-bnb-like data-count="12430"><span aria-hidden="true">♡</span> 点赞 <b>12430</b></button>
+            <button class="bnb-op" type="button" data-bnb-save><span aria-hidden="true">☆</span> 收藏</button>
+            <button class="bnb-op" type="button" data-bnb-comment="把周末交给一条河">评论</button>
+          </div>
+        </div>
+
+        <div class="bnb-video-card">
+          <div>
+            <span class="bnb-chip">治愈影像</span>
+            <h3>给宠物拍一支像电影的开场</h3>
+            <p>作者「阿喵」拆解了 6 个镜头语言：低机位跟随、逆光轮廓、慢门摇移，并给出家用设备的参数设置。片中使用的全部为平台正版配乐，可下载素材包。</p>
+            <div class="bnb-meta"><span>作者：阿喵</span><span>时长 08:36</span><span>播放 31.2 万</span><span>点赞 9,870</span></div>
+          </div>
+          <div class="bnb-video-ops">
+            <button class="bnb-op" type="button" data-bnb-like data-count="9870"><span aria-hidden="true">♡</span> 点赞 <b>9870</b></button>
+            <button class="bnb-op" type="button" data-bnb-save><span aria-hidden="true">☆</span> 收藏</button>
+            <button class="bnb-op" type="button" data-bnb-comment="给宠物拍电影开场">评论</button>
+          </div>
+        </div>
+
+        <div class="bnb-video-card">
+          <div>
+            <span class="bnb-chip bnb-chip--clay">人物访谈</span>
+            <h3>对话社区咖啡店主理人：一杯咖啡如何留住一条街的人</h3>
+            <p>访谈从店铺租金、客群变化聊到创作者的表达边界，并首次公开店主自建的小型放映角。32 分钟完整对谈，适合关注社区商业与内容生态的观众。</p>
+            <div class="bnb-meta"><span>作者：苏禾</span><span>时长 32:05</span><span>播放 14.6 万</span><span>点赞 6,240</span></div>
+          </div>
+          <div class="bnb-video-ops">
+            <button class="bnb-op" type="button" data-bnb-like data-count="6240"><span aria-hidden="true">♡</span> 点赞 <b>6240</b></button>
+            <button class="bnb-op" type="button" data-bnb-save><span aria-hidden="true">☆</span> 收藏</button>
+            <button class="bnb-op" type="button" data-bnb-comment="社区咖啡店主理人访谈">评论</button>
+          </div>
+        </div>
+
+        <div class="bnb-video-card">
+          <div>
+            <span class="bnb-chip">教程干货</span>
+            <h3>手机也能拍出稳定的街头画面：七种手持稳定法</h3>
+            <p>从握持姿势到呼吸节奏，作者「陈野」示范了不需任何稳定器的实拍技巧，并附上实拍前后对比片段。评论区可下载完整练习清单。</p>
+            <div class="bnb-meta"><span>作者：陈野</span><span>时长 11:24</span><span>播放 22.9 万</span><span>点赞 8,410</span></div>
+          </div>
+          <div class="bnb-video-ops">
+            <button class="bnb-op" type="button" data-bnb-like data-count="8410"><span aria-hidden="true">♡</span> 点赞 <b>8410</b></button>
+            <button class="bnb-op" type="button" data-bnb-save><span aria-hidden="true">☆</span> 收藏</button>
+            <button class="bnb-op" type="button" data-bnb-comment="手机手持稳定法">评论</button>
+          </div>
+        </div>
+
+        <div class="bnb-video-card">
+          <div>
+            <span class="bnb-chip">经验分享</span>
+            <h3>我们是怎么把一场社区影展办起来的</h3>
+            <p>从场地沟通、片单征集到现场放映设备清单，作者「林砚」复盘了一次 120 人规模的社区影展全流程，包含预算表与踩过的坑。</p>
+            <div class="bnb-meta"><span>作者：林砚</span><span>时长 16:50</span><span>播放 12.4 万</span><span>点赞 5,180</span></div>
+          </div>
+          <div class="bnb-video-ops">
+            <button class="bnb-op" type="button" data-bnb-like data-count="5180"><span aria-hidden="true">♡</span> 点赞 <b>5180</b></button>
+            <button class="bnb-op" type="button" data-bnb-save><span aria-hidden="true">☆</span> 收藏</button>
+            <button class="bnb-op" type="button" data-bnb-comment="社区影展复盘">评论</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="bnb-section bnb-section--tint" id="bnb-topics">
+    <div class="bnb-wrap">
+      <div class="bnb-section-head">
+        <div class="bnb-eyebrow">专题企划</div>
+        <h2>正在进行的三项品牌企划</h2>
+        <p>由 bnb89 官方发布并持续运营，每项企划都开放社区参与、上传与投票，形成长期的原创内容积累。</p>
+      </div>
+      <div class="bnb-topics">
+        <article class="bnb-topic">
+          <span class="bnb-topic-status">征集中 · 还有 12 天</span>
+          <h3>微光计划第二季：我身边的守艺人</h3>
+          <p>寻找仍在坚持传统手艺与日常技能的人，用 3-8 分钟短片记录一次完整的工作过程，强调真实同期声与细节特写。</p>
+          <ul>
+            <li>已上线：「补锅匠的最后一把锤」</li>
+            <li>已上线：「凌晨四点的豆腐坊」</li>
+            <li>待上线：「修表铺里的第 40 年」</li>
+          </ul>
+        </article>
+        <article class="bnb-topic">
+          <span class="bnb-topic-status">放映中 · 每周更新</span>
+          <h3>社区放映厅：本地短片联展</h3>
+          <p>与本地文化机构合作，在社区空间举办小型放映，每场包含创作者映后交流，所有片目均为平台正版授权。</p>
+          <ul>
+            <li>第一场：城市与人的距离</li>
+            <li>第二场：家庭影像档案</li>
+            <li>第三场：夜行者单元</li>
+          </ul>
+        </article>
+        <article class="bnb-topic">
+          <span class="bnb-topic-status bnb-topic-status--warm">报名开放 · 限 200 人</span>
+          <h3>48 小时影像挑战赛</h3>
+          <p>给定主题与三个随机元素，创作者在 48 小时内完成拍摄与剪辑。评审由平台编辑与签约创作者组成，优胜作品进入首页推荐。</p>
+          <ul>
+            <li>主题：一次没有计划的出发</li>
+            <li>必备元素：一段环境声、一件旧物、一个背影</li>
+            <li>提交方式：官网投稿入口上传</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关键词解析 -->
+  <section class="bnb-section" id="bnb-analysis">
+    <div class="bnb-wrap">
+      <div class="bnb-section-head">
+        <div class="bnb-eyebrow">品牌解析</div>
+        <h2>bnb89 是什么：一个视频品牌的定位与长期主义</h2>
+      </div>
+      <div class="bnb-analysis">
+        <div>
+          <h3>从社区出发：bnb89 的内容原点</h3>
+          <p>bnb89 的起点非常简单：社区里每天都有值得被记录的事，但真正被拍下来、被剪成片、被好好保存的很少。所以平台把「真实」放在第一位，不做过度包装的叙事，不追求夸张的信息密度，而是用完整的镜头、清晰的同期声与负责任的剪辑，把一件事讲清楚。官网上的每一支视频都标注了作者、拍摄地点与拍摄周期，观众可以追溯内容的生产过程。对创作者而言，这种透明感意味着一种保护：你的作品不会被随意搬运，也不会被改写成博眼球的样子。</p>
+          <p>在 bnb89，内容生态由三个层次共同支撑。第一层是创作者上传的日常记录与经验分享，构成平台的活水；第二层是官方策划的专题企划与品牌故事，提供方向感与制作标准；第三层是社区互动——评论、投票、投稿、线下放映，把观看者变成参与者。三层次环环相扣，才让一个视频品牌不只是内容仓库，而是持续运营的社区。</p>
+          <h3>品质与标准：为什么我们坚持高清与正版</h3>
+          <p>一个视频品牌的口碑，建立在可被检验的质量之上。bnb89 对所有入库内容执行统一的技术与内容标准：分辨率不低于 1080P、音频响度经过校准、字幕必须人工校对、配乐必须来自正版曲库或创作者原创。我们为签约创作者提供标准化的后期支持与素材包，减少「好素材被糟糕后期浪费」的情况。同时，平台建立了内容分级与隐私审查机制，涉及未成年人、私人居所与敏感场景的素材必须取得授权后才能发布。这些流程并不浪漫，但它们是「值得信赖」四个字的具体形态。</p>
+          <p>对于企业与合作机构，bnb89 提供品牌纪录片的策划与制作服务，从前期调研到成片交付全流程留档。我们坚持一个原则：企业内容也应当是好看的、有信息量的、经得起反复观看的。过去一年，我们为社区商业、公共文化空间与地方文旅完成了多支定制短片，其中部分作品被纳入平台的公开专题，形成品牌影响力与内容品质的双向积累。</p>
+          <h3>创作者优先：内容生态的运转方式</h3>
+          <p>平台的成长依赖创作者，所以 bnb89 把「创作者友好」写进产品逻辑。作者主页清楚展示作品数、粉丝数与擅长领域，每支视频都能看到收藏与评论数据；平台提供选题灵感、脚本模板、标题建议与剪辑思路等辅助工具，帮助新手把模糊的想法变成可执行的拍摄计划。我们设有新人榜与口碑榜，让新加入的创作者也能获得曝光。投稿通道全年开放，评审以内容完成度与真实性为核心标准，不以设备价格论高低。</p>
+          <p>为了保持社区活力，bnb89 定期举办线上挑战赛与线下放映，鼓励创作者互相观看、互相评论。我们相信，一个视频平台真正的壁垒不是算法，而是人与人之间的信任：观众愿意花 20 分钟看一支没有特效的短片，创作者愿意为了一次真实的记录等待一整天的光线。这种信任需要时间，也需要规则。平台在版权保护、投诉处理与内容纠正上保持公开流程，任何引用或二次创作都需要标明来源，这是对原创最基本的尊重。</p>
+          <h3>面向未来：品牌的社会责任与长期陪伴</h3>
+          <p>作为一个持续运营的视频品牌，bnb89 关注镜头之外的现实。我们与社区机构合作开设影像工作坊，提供设备借用与基础培训，让更多人有机会掌握表达工具；我们把部分专题收益用于支持地方影像档案的数字化整理，避免珍贵的日常影像在日常中被遗忘。这些工作不会立刻带来流量，但它们决定了这个平台在五年、十年之后是否仍然有存在的意义。</p>
+          <p>未来，bnb89 会继续深耕社区影像这个垂直领域，坚持原创、正版与高清，把内容生态做得更扎实：让好作品被看见，让创作者被尊重，让观众在这里获得真实的陪伴与力量。这就是我们对「官方网站」四个字的理解——不是一块招牌，而是一份需要每天履行的承诺。</p>
+        </div>
+        <aside class="bnb-analysis-side">
+          <h3>品牌能力概览</h3>
+          <div class="bnb-bar">
+            <div class="bnb-bar-item"><span>原创内容占比 <b>92%</b></span><div class="bnb-bar-track"><div class="bnb-bar-fill" style="width:92%"></div></div></div>
+            <div class="bnb-bar-item"><span>高清片源覆盖率 <b>100%</b></span><div class="bnb-bar-track"><div class="bnb-bar-fill" style="width:100%"></div></div></div>
+            <div class="bnb-bar-item"><span>创作者满意度 <b>96%</b></span><div class="bnb-bar-track"><div class="bnb-bar-fill" style="width:96%"></div></div></div>
+            <div class="bnb-bar-item"><span>用户周活跃留存 <b>71%</b></span><div class="bnb-bar-track"><div class="bnb-bar-fill" style="width:71%"></div></div></div>
+            <div class="bnb-bar-item"><span>社区互动参与率 <b>64%</b></span><div class="bnb-bar-track"><div class="bnb-bar-fill" style="width:64%"></div></div></div>
+          </div>
+          <p style="font-size:13px;color:#6a7972;margin:18px 0 0;">数据统计口径为平台近 12 个月运营数据，仅用于品牌能力说明。</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者矩阵 -->
+  <section class="bnb-section bnb-section--tint" id="bnb-authors">
+    <div class="bnb-wrap">
+      <div class="bnb-section-head">
+        <div class="bnb-eyebrow">创作者矩阵</div>
+        <h2>bnb89 的签约创作者</h2>
+        <p>他们来自不同背景，共同点是愿意花时间把一件事拍完整。点击「查看简介」可展开作者档案。</p>
+      </div>
+      <div class="bnb-authors">
+        <article class="bnb-author">
+          <div class="bnb-author-top">
+            <div class="bnb-avatar bnb-avatar--a" aria-hidden="true">林</div>
+            <div><h3>林砚</h3><div class="bnb-role">擅长：在地文化 · 人物访谈</div></div>
+          </div>
+          <p>纪录片导演，做过六年地方报社摄影记者，习惯先花三天观察再开机。作品多围绕老街、手艺人与社区空间，强调同期声与长镜头，希望观众能听到环境里真实的声音。</p>
+          <div class="bnb-author-figures"><span>作品 <b>46</b></span><span>粉丝 <b>18.2 万</b></span></div>
+          <button class="bnb-btn bnb-btn-ghost" type="button" data-bnb-author="林砚：纪录片导演，六年地方摄影记者经历，专注在地文化与人物访谈，代表作《老街一天》《社区影展复盘》。">查看简介</button>
+        </article>
+        <article class="bnb-author">
+          <div class="bnb-author-top">
+            <div class="bnb-avatar bnb-avatar--b" aria-hidden="true">苏</div>
+            <div><h3>苏禾</h3><div class="bnb-role">擅长：生活方式 · 美食烹饪</div></div>
+          </div>
+          <p>自由撰稿人与食谱作者，擅长把一人食、四季食材与日常琐事拍成有节奏感的生活短片。剪辑偏好留白，常用厨房环境声替代配乐，作品被观众称为「可以下饭的影像」。</p>
+          <div class="bnb-author-figures"><span>作品 <b>63</b></span><span>粉丝 <b>25.7 万</b></span></div>
+          <button class="bnb-btn bnb-btn-ghost" type="button" data-bnb-author="苏禾：自由撰稿人、食谱作者，专注生活方式与美食烹饪内容，代表作《一人食的四季》《社区咖啡店主理人访谈》。">查看简介</button>
+        </article>
+        <article class="bnb-author">
+          <div class="bnb-author-top">
+            <div class="bnb-avatar bnb-avatar--c" aria-hidden="true">陈</div>
+            <div><h3>陈野</h3><div class="bnb-role">擅长：教程干货 · 创作幕后</div></div>
+          </div>
+          <p>独立摄影师与后期讲师，过去七年拍摄过商业广告也拍过街头纪录。课程风格直给，喜欢用对比样片说明问题，长期更新设备与稳定技巧，是许多新人创作者的第一位老师。</p>
+          <div class="bnb-author-figures"><span>作品 <b>58</b></span><span>粉丝 <b>31.4 万</b></span></div>
+          <button class="bnb-btn bnb-btn-ghost" type="button" data-bnb-author="陈野：独立摄影师、后期讲师，专注教程干货与创作幕后，擅长手持拍摄与稳定技巧，代表作《镜头背后的 11 小时》。">查看简介</button>
+        </article>
+        <article class="bnb-author">
+          <div class="bnb-author-top">
+            <div class="bnb-avatar bnb-avatar--d" aria-hidden="true">江</div>
+            <div><h3>江城子</h3><div class="bnb-role">擅长：城市探索 · 户外活动</div></div>
+          </div>
+          <p>城市规划从业者，业余时间用脚步丈量城市边缘。他的视频常带路线图、补给点与时间轴，把探索做成可复制的方法。口头禅是「先走过去，再谈感受」。</p>
+          <div class="bnb-author-figures"><span>作品 <b>39</b></span><span>粉丝 <b>16.9 万</b></span></div>
+          <button class="bnb-btn bnb-btn-ghost" type="button" data-bnb-author="江城子：城市规划从业者，专注城市探索与户外活动内容，擅长路线记录与在地观察，代表作《城市夜班车》《把周末交给一条河》。">查看简介</button>
+        </article>
+        <article class="bnb-author">
+          <div class="bnb-author-top">
+            <div class="bnb-avatar bnb-avatar--e" aria-hidden="true">阿</div>
+            <div><h3>阿喵</h3><div class="bnb-role">擅长：萌宠日常 · 治愈影像</div></div>
+          </div>
+          <p>宠物影像创作者，家里有两只领养的猫。她把镜头当作与动物相处的方式，主张拍摄时减少打扰、增加等待。作品常被用于动物救助机构的宣传，也持续分享低成本拍摄技巧。</p>
+          <div class="bnb-author-figures"><span>作品 <b>71</b></span><span>粉丝 <b>22.3 万</b></span></div>
+          <button class="bnb-btn bnb-btn-ghost" type="button" data-bnb-author="阿喵：宠物影像创作者，专注萌宠日常与治愈影像，长期与动物救助机构合作，代表作《给宠物拍一支像电影的开场》。">查看简介</button>
+        </article>
+        <article class="bnb-author">
+          <div class="bnb-author-top">
+            <div class="bnb-avatar bnb-avatar--a" aria-hidden="true">周</div>
+            <div><h3>周慢</h3><div class="bnb-role">擅长：实用技巧 · 手作 DIY</div></div>
+          </div>
+          <p>家居整理与阳台种植爱好者，视频节奏慢但信息密度高。她相信「可执行的教程」比炫技更有价值，每条视频都附步骤清单与常见问题，被观众称为「最会做笔记的创作者」。</p>
+          <div class="bnb-author-figures"><span>作品 <b>44</b></span><span>粉丝 <b>13.6 万</b></span></div>
+          <button class="bnb-btn bnb-btn-ghost" type="button" data-bnb-author="周慢：家居整理与阳台种植爱好者，专注实用技巧与手作 DIY，擅长可执行的分步教程，代表作《三分钟学会窗台种菜》。">查看简介</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户口碑 -->
+  <section class="bnb-section" id="bnb-reviews">
+    <div class="bnb-wrap">
+      <div class="bnb-section-head">
+        <div class="bnb-eyebrow">用户口碑</div>
+        <h2>来自观众与创作者的真实评价</h2>
+        <p>评价来自平台注册用户与签约创作者，内容未经修饰，仅做隐私脱敏。</p>
+      </div>
+      <div class="bnb-reviews">
+        <article class="bnb-review">
+          <div class="bnb-review-head"><span class="bnb-review-dot">郑</span><strong>郑先生</strong><span>观众</span></div>
+          <div class="bnb-stars" aria-label="评分 5 分">★★★★★</div>
+          <p>习惯晚上在 bnb89 看一支短片再睡，画面和声音都稳，不会有那种为了抓眼球乱剪的情况，看完整个人是安静的。</p>
+        </article>
+        <article class="bnb-review">
+          <div class="bnb-review-head"><span class="bnb-review-dot">Y</span><strong>Yuki</strong><span>观众</span></div>
+          <div class="bnb-stars" aria-label="评分 5 分">★★★★★</div>
+          <p>第一次在官网投稿，第二天就收到编辑的反馈，指出了音频底噪的问题，还给了降噪步骤，这种细致程度超出预期。</p>
+        </article>
+        <article class="bnb-review">
+          <div class="bnb-review-head"><span class="bnb-review-dot">老</span><strong>老赵</strong><span>签约创作者</span></div>
+          <div class="bnb-stars" aria-label="评分 4 分">★★★★☆</div>
+          <p>平台的素材包和正版曲库很实用，省了很多版权焦虑。唯一希望的是专题征集周期能再长一点，拍摄时间总是有点赶。</p>
+        </article>
+        <article class="bnb-review">
+          <div class="bnb-review-head"><span class="bnb-review-dot">南</span><strong>南风</strong><span>观众</span></div>
+          <div class="bnb-stars" aria-label="评分 5 分">★★★★★</div>
+          <p>《城市夜班车》让我重新看了自己住了十年的城市。评论区里有同线路的通勤族补充细节，这种互动比视频本身还动人。</p>
+        </article>
+        <article class="bnb-review">
+          <div class="bnb-review-head"><span class="bnb-review-dot">阿</span><strong>阿树</strong><span>新人创作者</span></div>
+          <div class="bnb-stars" aria-label="评分 5 分">★★★★★</div>
+          <p>新人榜给了我第一波观众。作品数、粉丝数都摆在明面上，没有玄学推荐，按标准打磨内容就有回报，这点很难得。</p>
+        </article>
+        <article class="bnb-review">
+          <div class="bnb-review-head"><span class="bnb-review-dot">陆</span><strong>陆女士</strong><span>观众</span></div>
+          <div class="bnb-stars" aria-label="评分 4 分">★★★★☆</div>
+          <p>喜欢教程类内容，步骤写得清楚，还会附清单。建议在移动端加一个收藏夹分类，不然收藏多了有点难找。</p>
+        </article>
+        <article class="bnb-review">
+          <div class="bnb-review-head"><span class="bnb-review-dot">H</span><strong>Hank</strong><span>合作方</span></div>
+          <div class="bnb-stars" aria-label="评分 5 分">★★★★★</div>
+          <p>与 bnb89 合作过一支品牌纪录片，从调研到成片交付流程清晰，拍摄现场不打扰真实场景，最终成片我们自己也在内部反复播放。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 -->
+  <section class="bnb-section bnb-section--tint" id="bnb-news">
+    <div class="bnb-wrap">
+      <div class="bnb-section-head">
+        <div class="bnb-eyebrow">企业动态</div>
+        <h2>官方发布与平台更新</h2>
+        <p>记录 bnb89 的每一次内容迭代、功能升级与社区活动，保持品牌运营的公开与透明。</p>
+      </div>
+      <div class="bnb-news">
+        <div class="bnb-news-item">
+          <time datetime="2026-11-18">2026-11-18</time>
+          <div><h3>「微光计划」第二季上线，新增 12 支原创短片</h3><p>官方发布本季片单，覆盖手作、地方饮食与老店铺记录，全部支持高清播放与素材来源标注。</p></div>
+        </div>
+        <div class="bnb-news-item">
+          <time datetime="2026-11-09">2026-11-09</time>
+          <div><h3>投稿后台升级：新增分镜上传与协作备注</h3><p>创作者可在一个项目内管理粗剪、终稿与授权文件，协作成员可留言标注时间码，提升团队效率。</p></div>
+        </div>
+        <div class="bnb-news-item">
+          <time datetime="2026-10-27">2026-10-27</time>
+          <div><h3>社区放映厅第三场在城南文化空间完成</h3><p>本场放映 6 支短片，超过 80 位观众参与映后交流，部分作品已进入平台首页精品推荐。</p></div>
+        </div>
+        <div class="bnb-news-item">
+          <time datetime="2026-10-12">2026-10-12</time>
+          <div><h3>48 小时影像挑战赛报名开启，限 200 人</h3><p>本届主题为「一次没有计划的出发」，优胜作品将获得制作支持与官方推荐位，报名截止至 11 月 30 日。</p></div>
+        </div>
+      </div>
+
+      <div class="bnb-section-head" style="margin-top:40px;">
+        <h2>合作品牌与伙伴</h2>
+        <p>与我们一起把社区影像做得更专业的机构与品牌。</p>
+      </div>
+      <div class="bnb-partners">
+        <div class="bnb-partner">城南文化空间<span>线下放映合作</span></div>
+        <div class="bnb-partner">拾光影像器材<span>设备支持</span></div>
+        <div class="bnb-partner">青禾正版音乐<span>授权曲库</span></div>
+        <div class="bnb-partner">社区营造联合会<span>公益协作</span></div>
+        <div class="bnb-partner">慢城书店<span>联合企划</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bnb-section" id="bnb-faq">
+    <div class="bnb-wrap">
+      <div class="bnb-section-head">
+        <div class="bnb-eyebrow">常见问题</div>
+        <h2>关于 bnb89 你可能想知道的事</h2>
+        <p>以下问题由平台运营团队整理，如仍有疑问可通过投稿入口联系我们。</p>
+      </div>
+      <div class="bnb-faq">
+        <details>
+          <summary>bnb89 是一个什么样的平台？</summary>
+          <p>bnb89 是一个以社区真实影像为核心的视频内容平台，同时也是品牌官方网站。我们提供原创高清短片、创作者档案、专题企划与社区互动功能，面向观众、创作者与企业合作方。</p>
+        </details>
+        <details>
+          <summary>如何向平台投稿？投稿有什么要求？</summary>
+          <p>点击页面中的「投稿与报名」按钮即可打开投稿说明。我们接受 1-30 分钟的原创视频，要求画面清晰、声音可辨、内容真实，涉及他人肖像与私人场所须取得授权。评审重点是完成度与真实性，不以设备价格作为标准。</p>
+        </details>
+        <details>
+          <summary>平台内容是否为正版与高清？</summary>
+          <p>是的。所有入库内容均经过版权核验，配乐来自正版曲库或创作者原创，片源分辨率不低于 1080P。平台对搬运与二次剪辑有明确的处理流程，保护原创者权益。</p>
+        </details>
+        <details>
+          <summary>我可以参与线下放映和挑战赛吗？</summary>
+          <p>可以。社区放映厅每场开放报名，挑战赛按届开放。相关通知都会通过顶部公告条与「企业动态」发布，请注意查看时间与名额限制。</p>
+        </details>
+        <details>
+          <summary>企业可以合作拍摄品牌纪录片吗？</summary>
+          <p>可以。bnb89 提供从前期调研、脚本策划到拍摄交付的全流程服务，坚持真实记录与可看性并重。合作需求可通过投稿入口提交，我们会在三个工作日内回复。</p>
+        </details>
+        <details>
+          <summary>我喜欢的内容找不到了怎么办？</summary>
+          <p>可先使用顶部搜索框按标题、作者或标签检索。若内容因授权到期或作者申请下架，平台会在作者主页保留说明。你也可以通过反馈入口联系我们协助查找。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 投稿 CTA -->
+  <section class="bnb-section" id="bnb-join">
+    <div class="bnb-wrap">
+      <div class="bnb-cta">
+        <div>
+          <h2>把你的影像，放进 bnb89 的官方片单</h2>
+          <p>无论你是第一次拿起相机，还是已经拍了十年，只要画面里有真实的生活，我们都愿意认真看完。投稿通道全年开放，平台提供选题灵感、剪辑思路与正版素材支持，让好内容被更多人看见。</p>
+        </div>
+        <div class="bnb-hero-actions">
+          <button class="bnb-btn bnb-btn-ghost" type="button" data-bnb-open="submit">我要投稿</button>
+          <button class="bnb-btn" style="background:#12211d;color:#fff;" type="button" data-bnb-open="feedback">意见反馈</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bnb-footer">
+  <div class="bnb-wrap">
+    <div class="bnb-footer-grid">
+      <div>
+        <h3>bnb89 官方网站</h3>
+        <p>以社区真实影像为核心的视频品牌，坚持原创、正版与高清，持续运营内容生态，为创作者与观众搭建值得信赖的交流空间。</p>
+      </div>
+      <div>
+        <h3>内容导航</h3>
+        <ul>
+          <li><a href="#bnb-focus">精品内容</a></li>
+          <li><a href="#bnb-topics">专题企划</a></li>
+          <li><a href="#bnb-authors">创作者矩阵</a></li>
+          <li><a href="#bnb-news">企业动态</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>参与方式</h3>
+        <ul>
+          <li><a href="#bnb-join">投稿与报名</a></li>
+          <li><a href="#bnb-faq">常见问题</a></li>
+          <li><a href="#bnb-reviews">用户口碑</a></li>
+          <li><a href="#bnb-analysis">品牌解析</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>品牌信息</h3>
+        <ul>
+          <li>内容合作：partner@bnb89.example</li>
+          <li>投稿咨询：submit@bnb89.example</li>
+          <li>办公时间：周一至周五 10:00-18:00</li>
+          <li>地址：城南文化空间 3 层</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bnb-footer-bottom">
+      <span>© 2026 bnb89 官方网站 · 版权所有 · 持续运营中</span>
+      <span>备案号：社区影像备 2026-1189 号 · 内容均为原创或正版授权</span>
+    </div>
+  </div>
+</footer>
+
+<button class="bnb-top" id="bnbTopBtn" type="button" aria-label="回到顶部">↑</button>
+
+<div class="bnb-modal" id="bnbModal" role="dialog" aria-modal="true" aria-labelledby="bnbModalTitle">
+  <div class="bnb-modal-box">
+    <button class="bnb-modal-close" id="bnbModalClose" type="button" aria-label="关闭弹窗">×</button>
+    <h3 id="bnbModalTitle">提示</h3>
+    <div id="bnbModalBody"></div>
+  </div>
+</div>
+
+<div class="bnb-toast" id="bnbToast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+  var burger=document.getElementById("bnbBurger");
+  var nav=document.getElementById("bnbNav");
+  if(burger&&nav){
+    burger.addEventListener("click",function(){
+      var open=nav.classList.toggle("is-open");
+      burger.setAttribute("aria-expanded",open?"true":"false");
+      burger.setAttribute("aria-label",open?"收起导航":"展开导航");
+    });
+    nav.addEventListener("click",function(e){
+      if(e.target.tagName==="A"){
+        nav.classList.remove("is-open");
+        burger.setAttribute("aria-expanded","false");
+      }
+    });
+  }
+
+  var toastEl=document.getElementById("bnbToast");
+  var toastTimer=null;
+  function toast(msg){
+    if(!toastEl) return;
+    toastEl.textContent=msg;
+    toastEl.classList.add("is-on");
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(function(){toastEl.classList.remove("is-on");},2400);
+  }
+
+  var searchInput=document.getElementById("bnbSearchInput");
+  var searchBtn=document.getElementById("bnbSearchBtn");
+  var searchTip=document.getElementById("bnbSearchTip");
+  var searchIndex=[
+    {k:"老街一天",t:"《老街一天》：用 12 小时记录一条街的呼吸 · 作者 林砚"},
+    {k:"窗台种菜",t:"三分钟学会窗台种菜 · 作者 周慢"},
+    {k:"微光计划",t:"专题企划：微光计划第二季 · 我身边的守艺人"},
+    {k:"城市夜班车",t:"城市夜班车：凌晨两点的乘客与他们的故事 · 作者 江城子"},
+    {k:"宠物",t:"给宠物拍一支像电影的开场 · 作者 阿喵"},
+    {k:"苏禾",t:"创作者 苏禾 · 生活方式与美食烹饪"},
+    {k:"陈野",t:"创作者 陈野 · 教程干货与创作幕后"},
+    {k:"投稿",t:"投稿与报名：全年开放，点击 CTA 区域了解详情"},
+    {k:"挑战赛",t:"48 小时影像挑战赛 · 限 200 人报名"}
+  ];
+  function doSearch(){
+    if(!searchInput||!searchTip) return;
+    var q=(searchInput.value||"").trim();
+    if(!q){
+      searchTip.textContent="输入标题、作者或专题名称试试，例如「老街一天」「周慢」「微光计划」。";
+      searchTip.classList.add("is-on");
+      return;
+    }
+    var hits=searchIndex.filter(function(item){return item.k.indexOf(q)>-1||item.t.indexOf(q)>-1;});
+    if(hits.length){
+      searchTip.textContent="找到 "+hits.length+" 条相关内容："+hits.slice(0,2).map(function(x){return x.t;}).join("；");
+    }else{
+      searchTip.textContent="暂未找到与「"+q+"」匹配的官方内容，换个关键词试试，或通过投稿入口反馈。";
+    }
+    searchTip.classList.add("is-on");
+  }
+  if(searchBtn) searchBtn.addEventListener("click",doSearch);
+  if(searchInput){
+    searchInput.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();doSearch();}});
+    searchInput.addEventListener("input",function(){if(!searchInput.value.trim()&&searchTip){searchTip.classList.remove("is-on");}});
+  }
+
+  document.querySelectorAll("[data-bnb-like]").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var base=parseInt(btn.getAttribute("data-count"),10)||0;
+      var liked=btn.classList.toggle("is-liked");
+      var num=btn.querySelector("b");
+      var count=liked?base+1:base;
+      if(num) num.textContent=count;
+      var icon=btn.querySelector("span");
+      if(icon) icon.textContent=liked?"♥":"♡";
+      toast(liked?"已点赞，感谢支持原创内容":"已取消点赞");
+    });
+  });
+
+  document.querySelectorAll("[data-bnb-save]").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var saved=btn.classList.toggle("is-saved");
+      var icon=btn.querySelector("span");
+      if(icon) icon.textContent=saved?"★":"☆";
+      toast(saved?"已加入收藏，可在个人中心查看":"已取消收藏");
+    });
+  });
+
+  var modal=document.getElementById("bnbModal");
+  var modalTitle=document.getElementById("bnbModalTitle");
+  var modalBody=document.getElementById("bnbModalBody");
+  var modalClose=document.getElementById("bnbModalClose");
+  function openModal(title,html){
+    if(!modal||!modalBody) return;
+    if(modalTitle) modalTitle.textContent=title;
+    modalBody.innerHTML=html;
+    modal.classList.add("is-on");
+    if(modalClose) modalClose.focus();
+  }
+  function closeModal(){
+    if(modal) modal.classList.remove("is-on");
+  }
+  if(modalClose) modalClose.addEventListener("click",closeModal);
+  if(modal) modal.addEventListener("click",function(e){if(e.target===modal) closeModal();});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape") closeModal();});
+
+  document.querySelectorAll("[data-bnb-open]").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var type=btn.getAttribute("data-bnb-open");
+      if(type==="submit"){
+        openModal("投稿与报名","<p>投稿通道全年开放。请准备：作品文件或高清链接、300 字以内的内容简介、拍摄授权说明。平台评审以内容完成度与真实性为核心，三个工作日内回复。</p><textarea class='bnb-textarea' placeholder='可在此草拟你的作品简介…'></textarea><p style='margin-top:12px;'><button class='bnb-btn bnb-btn-primary' type='button' data-bnb-toast='登记成功，我们会通过站内信联系你'>提交登记</button></p>");
+      }else{
+        openModal("意见反馈","<p>我们重视每一条反馈。请描述你遇到的问题或建议，平台运营团队会逐一阅读并在必要时公开处理流程。</p><textarea class='bnb-textarea' placeholder='写下你的反馈…'></textarea><p style='margin-top:12px;'><button class='bnb-btn bnb-btn-primary' type='button' data-bnb-toast='反馈已收到，感谢你的帮助'>提交反馈</button></p>");
+      }
+    });
+  });
+
+  document.querySelectorAll("[data-bnb-comment]").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var title=btn.getAttribute("data-bnb-comment");
+      openModal("评论 · "+title,"<p>社区讨论区正在展示该片的公开短评，欢迎补充你的观后感。</p><div class='bnb-comment-list'><div><strong>晚风：</strong>看完想去走一遍片中的路线，节奏很舒服。</div><div><strong>乔木：</strong>同期声处理得很克制，细节都在声音里。</div><div><strong>小满：</strong>希望能出一版附带拍摄机位的说明。</div></div><p style='margin-top:12px;'><button class='bnb-btn bnb-btn-primary' type='button' data-bnb-toast='评论已展开，感谢参与社区讨论'>参与讨论</button></p>");
+    });
+  });
+
+  document.querySelectorAll("[data-bnb-author]").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      openModal("创作者档案", "<p>"+btn.getAttribute("data-bnb-author")+"</p><p>所有作品均标注拍摄地点与制作周期，可在作者主页查看完整片单。</p>");
+    });
+  });
+
+  document.querySelectorAll("[data-bnb-copy]").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var name=btn.getAttribute("data-bnb-copy");
+      var link= "bnb89 官方内容 · "+name;
+      function done(){toast("链接已复制，快去分享给同好");}
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(link).then(done).catch(function(){toast("复制失败，请手动选择内容分享");});
+      }else{
+        toast("当前浏览器不支持自动复制，可手动分享");
+      }
+    });
+  });
+
+  document.addEventListener("click",function(e){
+    var btn=e.target.closest("[data-bnb-toast]");
+    if(btn){
+      toast(btn.getAttribute("data-bnb-toast"));
+      closeModal();
+    }
+  });
+
+  var topBtn=document.getElementById("bnbTopBtn");
+  if(topBtn){
+    topBtn.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});
+    window.addEventListener("scroll",function(){
+      if(window.scrollY>520){topBtn.classList.add("is-on");}
+      else{topBtn.classList.remove("is-on");}
+    },{passive:true});
+  }
+})();
+</script>
+</body>
+                                                                       </html>
